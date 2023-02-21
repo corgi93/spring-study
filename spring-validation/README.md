@@ -1,5 +1,6 @@
-# Validation
+# Spring Validation & Exception 처리
 
+## Validation 처리 
 Validation은 프로그래밍에 있어서 가장 중요한 부분. 특히 java에서 null값에 대해 접근하려할 때 NPE(Null Point Exception)이 발생함으로, 이러한
 부분을 방지하기 위해 미리 검증하는 과정을 Validation
 
@@ -89,3 +90,16 @@ public @interface YearMonth {
 }
 
 ```
+
+-------
+
+## Exception 처리
+Web Application 입장에서 바라 봤을 때, 에러가 났을 때 내려줄 수 있는 방법은 많지 않음.
+
+1. Error 페이지
+2. 4xx 에러, 5xx 에러
+3. Client가 200외에 처리를 하지 못할 땐 200을 내려주고 별도의 에러 Message 전달.
+
+### Exception 어노테이션
+- @ControllerAdvice : Global 예외 처리 및 특정 package / Controller 예외처리
+- @ExceptionHandler : 특정 Controller 예외처리
